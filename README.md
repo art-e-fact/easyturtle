@@ -34,11 +34,7 @@ Notes:
 
 ### Interact
 
-Controlling the turtle can be activated as follows:
-
-    docker exec -it easyturtle bash /app/controller.sh
-
-Keeping focus on the shell window running the controller, you can use the arrows to move the turtle around.
+Keeping focus on the shell window running the container, you can use the arrows to move the turtle around.
 
 
 Motivation
@@ -72,5 +68,5 @@ Possible Next Steps
 
 * Replace the lazy reliance on `screen` for `systemd` or else.
 * Use multi-stage Docker build to create smaller images. Currently more than 2Gb...
-* Integrate the turtle controller as yet another process, to really have a single container.
+* ~~Integrate the turtle controller as yet another process, to really have a single container.~~
 * Expose the ROS version parameter. Defaults to `kinetic`, but not exposed at this point.
