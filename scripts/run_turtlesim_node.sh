@@ -3,6 +3,5 @@
 set -e
 
 source ~/catkin_ws/devel/setup.bash
-echo $ROS_PACKAGE_PATH
 
-rosrun turtlesim turtlesim_node
+rosrun turtlesim turtlesim_node > /logs/turtlesim_node.out 2> /logs/turtlesim_node.err
