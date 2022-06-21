@@ -9,6 +9,4 @@ echo Setting up for ${ros_version}
 
 source /opt/ros/${ros_version}/setup.sh
 
-printenv | sort
-
 roscore > /logs/roscore.out 2> /logs/roscore.err
