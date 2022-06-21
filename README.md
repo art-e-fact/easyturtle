@@ -10,6 +10,7 @@ Usage
 ### Requirements
 
 * Some Docker Enginer. Tested with 20.10.16
+* [MacOS] [XQuartz](https://github.com/XQuartz/XQuartz) to get X11
 
 ### Build
 
@@ -29,6 +30,7 @@ Notes:
 * `--rm` is just to delete the container after use (too simple an application and no state anyway).
 * `-it` is just to be able to signal the container, without using `docker stop`.
 * The minimal run command is `docker run easyturtle`.
+* On MacOS, you may have to authorise the container to use X11: `xhost + 127.0.0.1`
 
 ### Interact
 
