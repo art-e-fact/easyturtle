@@ -13,5 +13,12 @@ COPY scripts/run_controller.sh .
 COPY scripts/run_roscore.sh .
 COPY scripts/run_turtlesim_node.sh .
 
-ENV DISPLAY=host.docker.internal:0
+ARG DISPLAY=host.docker.internal:0
+ARG ROS_MASTER_URI=http://localhost:11311/
+ARG ROS_HOSTNAME=localhost
+
+ENV DISPLAY=$DISPLAY
+ENV ROS_MASTER_URI=$ROS_MASTER_URI
+ENV ROS_HOSTNAME=$ROS_HOSTNAME
+
 CMD ["bash", "/app/run.sh"]
