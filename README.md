@@ -9,7 +9,7 @@ Usage
 
 ### Requirements
 
-* Some Docker Enginer. Tested with 20.10.16
+* Some Docker Engine. Tested with 20.10.16
 * [MacOS] [XQuartz](https://github.com/XQuartz/XQuartz) to get X11
 
 ### Build
@@ -24,7 +24,7 @@ The command ends with a local image tagged `easyturtle`.
 
 Running the image executes in a single container:
 
-    docker run --rm -it -name easyturtle easyturtle
+    docker run --rm -it --name easyturtle easyturtle
 
 Notes:
 * `--rm` is just to delete the container after use (too simple an application and no state anyway).
