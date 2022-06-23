@@ -35,7 +35,7 @@ Tests on Ubuntu 18 have required:
     docker run --rm --interactive --tty --env DISPLAY=$DISPLAY --net host --name easyturtle easyturtle
 
 Tests on MacOS and Ubuntu 20 often require explictly authorising access to X11:
-* [MacOS] `xhost + 127.0.0.1`
+* [MacOS] `xhost + 127.0.0.1`: This will start an X11 server if needed, and allow the container to connect.
 * [Ubuntu 20] `xhost + local:`, for testing, `xhost +` is also available but not recommended (security issue, important to reactivate after usage with `xhost -`).
 
 Notes:
