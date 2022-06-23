@@ -9,8 +9,12 @@ Usage
 
 ### Requirements
 
-* Some Docker Engine. Tested with 20.10.16
-* [MacOS] [XQuartz](https://github.com/XQuartz/XQuartz) to get X11
+* A system with X11 available
+  * Most desktop Linux distributions.
+  * [MacOS] [XQuartz](https://github.com/XQuartz/XQuartz) to get X11.
+* Some Docker Engine
+  * Tested with 20.10.16 and 19.03.5
+  * Tested on Ubuntu 18, 20 and MacOS.
 
 ### Build
 
@@ -22,15 +26,23 @@ The command ends with a local image tagged `easyturtle`.
 
 ### Run
 
-Running the image executes in a single container:
+Running the image executes is *often* just:
 
-    docker run --rm -it --name easyturtle easyturtle
+    docker run --rm --interactive --tty --name easyturtle easyturtle
+
+Tests on Ubuntu 18 have required:
+
+    docker run --rm --interactive --tty --env DISPLAY=$DISPLAY --net host --name easyturtle easyturtle
+
+Tests on MacOS and Ubuntu 20 often require explictly authorising access to X11:
+* [MacOS] `xhost + 127.0.0.1`
+* [Ubuntu 20] `xhost + local:`, for testing, `xhost +` is also available but not recommended (security issue, important to reactivate after usage with `xhost -`).
 
 Notes:
 * `--rm` is just to delete the container after use (too simple an application and no state anyway).
-* `-it` is just to be able to signal the container, without using `docker stop`.
-* The minimal run command is `docker run easyturtle`.
-* On MacOS, you may have to authorise the container to use X11: `xhost + 127.0.0.1`
+* `--interactive --tty` is to be able to allow controling the turtle with the keyboard.
+* `--net host` sets the container on the same network as the host machine, so the container can access the X11 server.
+* The minimal (yet uninteresting beyond testing) run command is `docker run easyturtle`.
 
 ### Interact
 
