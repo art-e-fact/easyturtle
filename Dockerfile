@@ -1,12 +1,12 @@
-FROM osrf/ros:kinetic-desktop
+FROM alpineros/alpine-ros:kinetic-ros-core AS builder
 
 WORKDIR /app
 
 COPY scripts/provision.sh .
-RUN bash -x -e provision.sh
+RUN sh -x -e provision.sh
 
 COPY scripts/prep_turtlesim_node.sh .
-RUN bash -x -e prep_turtlesim_node.sh
+RUN sh -x -e prep_turtlesim_node.sh
 
 COPY scripts/run.sh .
 COPY scripts/run_controller.sh .
@@ -21,4 +21,4 @@ ENV DISPLAY=$DISPLAY
 ENV ROS_MASTER_URI=$ROS_MASTER_URI
 ENV ROS_HOSTNAME=$ROS_HOSTNAME
 
-CMD ["bash", "/app/run.sh"]
+CMD ["sh", "/app/run.sh"]

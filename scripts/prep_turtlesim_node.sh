@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -e
 
@@ -9,5 +9,5 @@ echo Setting up for ${ros_version}
 
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
-source /opt/ros/${ros_version}/setup.bash
-catkin_make
+
+sh /ros_entrypoint.sh catkin_make
