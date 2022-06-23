@@ -79,6 +79,6 @@ Possible Next Steps
 -------------------
 
 * Replace the lazy reliance on `screen` for `systemd` or else.
-* Use multi-stage Docker build to create smaller images. Currently more than 2Gb...
+* Use multi-stage Docker build to create smaller images. ~~Currently more than 2Gb...~~ Currently less than 900Mb after switch to Alpine base image.
 * ~~Integrate the turtle controller as yet another process, to really have a single container.~~
 * Expose the ROS version parameter. Defaults to `kinetic`, but not exposed at this point.
