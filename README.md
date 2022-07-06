@@ -13,8 +13,8 @@ Usage
   * Most desktop Linux distributions.
   * [MacOS] [XQuartz](https://github.com/XQuartz/XQuartz) to get X11.
 * Some Docker Engine
-  * Tested with 20.10.16 and 19.03.5
-  * Tested on Ubuntu 18, 20 and MacOS.
+  * Tested with 20.10.16, 20.10.17 and 19.03.5
+  * Tested on Ubuntu 18, 20, 22 and MacOS.
 
 ### Build
 
@@ -30,7 +30,7 @@ Running the image executes is *often* just:
 
     docker run --rm --interactive --tty --name easyturtle easyturtle
 
-Tests on Ubuntu 18 have required:
+Tests on Ubuntu 18 through 22 have required:
 
     docker run --rm --interactive --tty --env DISPLAY=$DISPLAY --net host --name easyturtle easyturtle
 
