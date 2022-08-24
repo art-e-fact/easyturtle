@@ -14,10 +14,12 @@ COPY scripts/run_roscore.sh .
 COPY scripts/run_turtlesim_node.sh .
 
 ARG DISPLAY=host.docker.internal:0
+ARG XAUTHORITY=/tmp/.docker.xauth
 ARG ROS_MASTER_URI=http://localhost:11311/
 ARG ROS_HOSTNAME=localhost
 
 ENV DISPLAY=$DISPLAY
+ENV XAUTHORITY=$XAUTHORITY
 ENV ROS_MASTER_URI=$ROS_MASTER_URI
 ENV ROS_HOSTNAME=$ROS_HOSTNAME
 
